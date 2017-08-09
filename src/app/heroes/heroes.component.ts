@@ -11,7 +11,7 @@ import { Hero } from './../models/hero';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-    title = 'Tour of Heroes';
+
       heroes: Hero[] = [];
     selectedHero: Hero;
 

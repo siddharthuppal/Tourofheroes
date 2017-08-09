@@ -13,13 +13,29 @@ import { HeroService } from './services/hero.service';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroSearchService } from './services/hero-search.service';
+
+// Observable class extensions
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/throw';
+
+// Observable operators
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +44,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     RoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
       ],
-  providers: [HeroService],
+  providers: [HeroService, HeroSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

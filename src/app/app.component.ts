@@ -9,6 +9,6 @@ import { Component, OnInit } from '@angular/core'
 })
 
 export class AppComponent{
-	title = 'TOH CLI';
+	title = 'Tour Of Heroes';
 
 }
